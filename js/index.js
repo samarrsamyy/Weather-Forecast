@@ -54,7 +54,7 @@ searchCity.addEventListener("keyup", () => checkWeather(searchCity.value));
 
 async function checkWeather(cityName) {
   var response = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityName}&days=3&aqi=yes`
+    `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityName}&days=3&aqi=yes`
   );
   var data = await response.json();
 
@@ -122,7 +122,7 @@ function success(position) {
 
 async function getCityName(long, lat) {
   var response = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${long}&days=3&aqi=yes`
+    `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${long}&days=3&aqi=yes`
   );
   var data = await response.json();
   checkWeather(data.location.name);
